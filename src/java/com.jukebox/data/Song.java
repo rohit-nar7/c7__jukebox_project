@@ -3,16 +3,21 @@ package com.jukebox.data;
 public class Song implements  Comparable<Song> {
     private int songId;
     private String songName;
-    private double duration;
-    private String albumId;
-    private String artistId;
+    private String duration;
+    private String albumName;
+    private String artistName;
+    private String genreName;
+    private String path;
 
-    public Song(int songId, String songName, double duration, String albumId, String artistId) {
+
+    public Song(int songId, String songName, String duration, String albumName, String artistName, String genreName, String path) {
         this.songId = songId;
         this.songName = songName;
         this.duration = duration;
-        this.albumId = albumId;
-        this.artistId = artistId;
+        this.albumName = albumName;
+        this.artistName = artistName;
+        this.genreName = genreName;
+        this.path = path;
     }
 
     public int getSongId() {
@@ -31,31 +36,53 @@ public class Song implements  Comparable<Song> {
         this.songName = songName;
     }
 
-    public double getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(double duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
-    public String getAlbumId() {
-        return albumId;
+    public String getAlbumName() {
+        return albumName;
     }
 
-    public void setAlbumId(String albumId) {
-        this.albumId = albumId;
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
     }
 
-    public String getArtistId() {
-        return artistId;
+    public String getArtistName() {
+        return artistName;
     }
 
-    public void setArtistId(String artistId) {
-        this.artistId = artistId;
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
     }
+
+    public String getGenreName() {
+        return genreName;
+    }
+
+    public void setGenreName(String genreName) {
+        this.genreName = genreName;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public Song() {
+
+    }
+
+
     @Override
     public int compareTo(Song song) {
-        return this.getSongName().compareTo(song.getSongName());
+        return this.getSongId() - song.getSongId();
     }
 }
